@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-content container">
+      <h1>Employee Directory</h1>
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search by name or email" />
+        <button id="filterToggleBtn">Filter</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Filter Panel -->
+    <div id="filterPanel" class="filter-panel hidden">
+      <h3>Filter Employees</h3>
+      <label for="filterDepartment">Department:</label>
+      <select id="filterDepartment">
+        <option value="">All</option>
+        <option value="HR">HR</option>
+        <option value="IT">IT</option>
+        <option value="Sales">Sales</option>
+      </select>
+
+      <label for="filterRole">Role:</label>
+      <select id="filterRole">
+        <option value="">All</option>
+        <option value="Manager">Manager</option>
+        <option value="Developer">Developer</option>
+        <option value="Executive">Executive</option>
+      </select>
+
+      <button id="applyFilterBtn" class="apply-filter-btn">Apply Filter</button>
+    </div>
+
+    <!-- Pagination Top -->
+    <div class="pagination-controls top">
+      <label for="itemsPerPage">Items per page:</label>
+      <select id="itemsPerPage">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+      <div id="pagination-top" class="pagination-buttons"></div>
+    </div>
+
+    <div class="main-content">
+      <div id="employee-list-container" class="employee-list"></div>
+
+      <div id="employee-form-container" class="hidden employee-form-wrapper">
+        <h2 id="form-title">Add Employee</h2>
+        <form id="employee-form">
+          <input type="hidden" id="employee-id" />
+          <label>First Name:</label>
+          <input type="text" id="first-name" required />
+          <label>Last Name:</label>
+          <input type="text" id="last-name" required />
+          <label>Email:</label>
+          <input type="email" id="email" required />
+          <label>Department:</label>
+          <input type="text" id="department" required />
+          <label>Role:</label>
+          <input type="text" id="role" required />
+          <div class="form-actions">
+            <button type="submit" class="save-btn">Save</button>
+            <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="add-btn-wrapper">
+      <button id="add-new-btn" class="add-btn">Add New</button>
+    </div>
+
+    <!-- Pagination Bottom -->
+    <div class="pagination-controls bottom">
+      <div id="pagination-bottom" class="pagination-buttons"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Employee Directory</p>
+  </footer>
+
+  <script src="../static/js/data.js"></script>
+  <script src="../static/js/app.js"></script>
+</body>
+
+</html>
